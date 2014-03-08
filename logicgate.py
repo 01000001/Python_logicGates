@@ -56,6 +56,15 @@ class AndGate(BinaryGate):
         else:
             return 0
 
+class NandGate(AndGate):
+
+    def performGateLogic(self):
+        if AndGate.performGateLogic(self) == 1:
+            return 0
+        else:
+            return 1
+    
+
 class OrGate(BinaryGate):
 
     def __init__(self,n):
@@ -69,6 +78,14 @@ class OrGate(BinaryGate):
             return 1
         else:
             return 0
+
+class NorGate(OrGate):
+
+    def performGateLogic(self):
+        if OrGate.performGateLogic(self) == 1:
+            return 0
+        else:
+            return 1
 
 class UnaryGate(LogicGate):
 
