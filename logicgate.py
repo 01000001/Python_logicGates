@@ -44,7 +44,9 @@ class AndGate(BinaryGate):
         BinaryGate.__init__(self,n)
 
     def performGateLogic(self):
-
+        """
+        facny functions are fancy
+        """
         a = self.getPinA()
         b = self.getPinB()
         if a==1 and b==1:
@@ -65,3 +67,16 @@ class OrGate(BinaryGate):
             return 1
         else:
             return 0
+
+class NotGate(UnaryGate):
+
+    def __init__(self,n):
+        UnaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        pin = self.getPin()
+        if pin==1:
+            return 0
+        else:
+            return 1
